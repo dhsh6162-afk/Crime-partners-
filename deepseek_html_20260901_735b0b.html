@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BJP Grid</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #0f0f0f; margin: 0; padding: 20px; color: white; }
+        .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; max-width: 500px; margin: 0 auto; }
+        .card { background-color: #1e1e1e; border-radius: 12px; overflow: hidden; position: relative; }
+        .image-wrapper { position: relative; width: 100%; background: #333; }
+        .image-wrapper img { width: 100%; height: auto; display: block; filter: grayscale(100%); }
+        .locked { position: absolute; top: 10px; left: 50%; transform: translateX(-50%); background-color: #ffc107; color: #111; font-size: 12px; font-weight: bold; padding: 3px 10px; border-radius: 20px; z-index: 10; }
+        .redacted { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: #000; color: #555; padding: 3px 10px; font-size: 14px; letter-spacing: 2px; z-index: 10; }
+        .info { padding: 10px; display: flex; justify-content: space-between; align-items: center; }
+        .title { font-size: 15px; font-weight: bold; line-height: 1.2; }
+        .tag { background-color: #444; color: #ccc; font-size: 10px; padding: 4px 6px; border-radius: 12px; text-align: center; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="grid">
+
+        <!-- Slot 1 (Yahan Raw Link Paste Karein) -->
+        <div class="card">
+            <div class="image-wrapper">
+                <div class="locked">🔒 LOCKED</div>
+                <img src="https://raw.githubusercontent.com/APKA_USERNAME/REPO/main/1.jpg" alt="P1">
+                <div class="redacted">█████</div>
+            </div>
+            <div class="info">
+                <div class="title">Narendra Modi</div>
+                <div class="tag">PM-IND</div>
+            </div>
+        </div>
+
+        <!-- Slot 2 -->
+        <div class="card">
+            <div class="image-wrapper">
+                <div class="locked">🔒 LOCKED</div>
+                <img src="https://raw.githubusercontent.com/APKA_USERNAME/REPO/main/2.jpg" alt="P2">
+                <div class="redacted">█████</div>
+            </div>
+            <div class="info">
+                <div class="title">Dr K. Laxman</div>
+                <div class="tag">RS-MP</div>
+            </div>
+        </div>
+
+        <!-- Slot 3 -->
+        <div class="card">
+            <div class="image-wrapper">
+                <div class="locked">🔒 LOCKED</div>
+                <img src="https://raw.githubusercontent.com/APKA_USERNAME/REPO/main/3.jpg" alt="P3">
+                <div class="redacted">█████</div>
+            </div>
+            <div class="info">
+                <div class="title">Lok Sabha MPs (BJP)</div>
+                <div class="tag">LS-2024</div>
+            </div>
+        </div>
+
+        <!-- Slot 4 -->
+        <div class="card">
+            <div class="image-wrapper">
+                <div class="locked">🔒 LOCKED</div>
+                <img src="https://raw.githubusercontent.com/APKA_USERNAME/REPO/main/4.jpg" alt="P4">
+                <div class="redacted">█████</div>
+            </div>
+            <div class="info">
+                <div class="title">Rajya Sabha MPs (BJP)</div>
+                <div class="tag">RS-2024</div>
+            </div>
+        </div>
+
+        <!-- Slot 5 -->
+        <div class="card">
+            <div class="image-wrapper">
+                <div class="locked">🔒 LOCKED</div>
+                <img src="https://raw.githubusercontent.com/APKA_USERNAME/REPO/main/5.jpg" alt="P5">
+                <div class="redacted">█████</div>
+            </div>
+            <div class="info">
+                <div class="title">State Presidents (BJP)</div>
+                <div class="tag">ST-PRES</div>
+            </div>
+        </div>
+
+        <!-- Slot 6 -->
+        <div class="card">
+            <div class="image-wrapper">
+                <div class="locked">🔒 LOCKED</div>
+                <img src="https://raw.githubusercontent.com/APKA_USERNAME/REPO/main/6.jpg" alt="P6">
+                <div class="redacted">█████</div>
+            </div>
+            <div class="info">
+                <div class="title">BJP National Team</div>
+                <div class="tag">HQ-DEL</div>
+            </div>
+        </div>
+
+        <!-- Slot 7 -->
+        <div class="card">
+            <div class="image-wrapper">
+                <div class="locked">🔒 LOCKED</div>
+                <img src="https://raw.githubusercontent.com/APKA_USERNAME/REPO/main/7.jpg" alt="P7">
+                <div class="redacted">█████</div>
+            </div>
+            <div class="info">
+                <div class="title">General Secretary</div>
+                <div class="tag">GS-1</div>
+            </div>
+        </div>
+
+        <!-- Slot 8 -->
+        <div class="card">
+            <div class="image-wrapper">
+                <div class="locked">🔒 LOCKED</div>
+                <img src="https://raw.githubusercontent.com/APKA_USERNAME/REPO/main/8.jpg" alt="P8">
+                <div class="redacted">█████</div>
+            </div>
+            <div class="info">
+                <div class="title">Senior Leader</div>
+                <div class="tag">SL-IND</div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
