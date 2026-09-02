@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔒 CLASSIFIED DOSSIER • ₹1199</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, sans-serif; }
+        body { background: #050505; min-height: 100vh; display: flex; justify-content: center; align-items: center; padding: 20px; }
+
+        .vault-container {
+            max-width: 1300px; width: 100%; background: #111; border: 1px solid #2a2a2a;
+            border-radius: 32px; padding: 35px; box-shadow: 0 30px 60px rgba(0,0,0,0.9);
+            position: relative; overflow: hidden;
+        }
+        .vault-container::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            background: repeating-linear-gradient(0deg, rgba(0,0,0,0.05) 0px, rgba(0,0,0,0.05) 2px, transparent 2px, transparent 6px);
+            pointer-events: none; z-index: 5;
+        }
+
+        .header {
+            display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;
+            flex-wrap: wrap; gap: 15px; border-bottom: 1px solid #222; padding-bottom: 20px;
+        }
+        .logo-area { display: flex; align-items: center; gap: 14px; }
+        .lock-icon { background: #e50914; color: #fff; width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px; }
+        .logo-text h1 { color: #f5f5f5; font-size: 22px; font-weight: 700; }
+        .logo-text span { color: #777; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; }
+        .status-badge { background: #1a1a1a; padding: 8px 20px; border-radius: 100px; border: 1px solid #333; color: #aaa; font-size: 13px; }
+
+        .paywall-banner {
+            background: linear-gradient(135deg, #1a1a1a, #0a0a0a); border: 1px solid #2c2c2c;
+            border-radius: 20px; padding: 20px 30px; margin-bottom: 35px;
+            display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;
+        }
+        .paywall-text { display: flex; align-items: center; gap: 15px; }
+        .paywall-text i { font-size: 28px; color: #f5c518; }
+        .paywall-text h2 { color: #eee; font-size: 18px; }
+        .paywall-text p { color: #888; font-size: 14px; }
+        .pay-btn {
+            background: #f5c518; color: #0a0a0a; border: none; padding: 14px 40px;
+            border-radius: 60px; font-weight: 800; font-size: 18px; cursor: pointer;
+            display: flex; align-items: center; gap: 12px; box-shadow: 0 4px 20px rgba(245, 197, 24, 0.3);
+            transition: 0.2s;
+        }
+        .pay-btn:hover { transform: scale(1.03); background: #ffe066; }
+
+        .grid-intro {
+            color: #555; font-size: 12px; text-transform: uppercase; letter-spacing: 2px;
+            margin-bottom: 20px; display: flex; justify-content: space-between; border-bottom: 1px solid #1a1a1a; padding-bottom: 12px;
+        }
+        .member-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 25px; margin-bottom: 30px; }
+
+        .member-card {
+            background: #0d0d0d; border-radius: 18px; overflow: hidden; border: 1px solid #222;
+            transition: 0.3s; position: relative; cursor: pointer;
+        }
+        .member-card:hover { transform: translateY(-6px); border-color: #444; box-shadow: 0 12px 30px rgba(0,0,0,0.8); }
+
+        .img-wrapper {
+            position: relative; width: 100%; padding-top: 115%; background: #080808; overflow: hidden;
+        }
+        .img-wrapper .user-image {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiMxYTFhMWEiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE0IiBmaWxsPSIjNTU1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+Q0xpY2sgdG8gQWRkPC90ZXh0Pjwvc3ZnPg==');
+            background-size: cover; background-position: center;
+            filter: grayscale(100%) contrast(1.1);
+            z-index: 2; transition: 0.3s;
+        }
+        .img-wrapper .bg-blur {
+            position: absolute; top: -10%; left: -10%; width: 120%; height: 120%;
+            background-image: inherit;
+            background-size: cover; background-position: center;
+            filter: grayscale(100%) blur(8px) brightness(0.3);
+            opacity: 0.7; z-index: 1;
+        }
+        .eye-black-bar {
+            position: absolute; top: 36%; left: 5%; width: 90%; height: 18%;
+            background: #000000; z-index: 10; border-radius: 4px;
+            border: 1px solid #2a2a2a; display: flex; align-items: center; justify-content: center;
+            opacity: 0.9;
+        }
+        .eye-black-bar::after {
+            content: '▇▇ REDACTED ▇▇'; font-size: 8px; letter-spacing: 2px; font-weight: 800;
+            color: #444; background: #111; padding: 2px 10px; border-radius: 20px;
+        }
+        .watermark-lock {
+            position: absolute; top: 12px; right: 12px; background: rgba(0,0,0,0.8); backdrop-filter: blur(4px);
+            padding: 4px 12px; border-radius: 40px; color: #f5c518; font-size: 10px; font-weight: 600;
+            border: 1px solid #f5c51830; z-index: 20;
+        }
+        .member-footer {
+            padding: 12px 16px; background: #0a0a0a; border-top: 1px solid #181818;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .member-footer .name { color: #bbb; font-weight: 600; font-size: 13px; }
+        .member-footer .badge { color: #444; font-size: 10px; background: #151515; padding: 2px 10px; border-radius: 40px; border: 1px solid #222; }
+
+        .hero-overlay { margin-top: 20px; padding: 30px 0 10px; text-align: center; border-top: 1px solid #1a1a1a; }
+        .hero-overlay h1 {
+            font-size: clamp(2.5rem, 9vw, 6rem); font-weight: 900; text-transform: uppercase; letter-spacing: 10px;
+            color: transparent; -webkit-text-stroke: 2px #e50914;
+            background: repeating-linear-gradient(45deg, #111, #111 10px, #1a1a1a 10px, #1a1a1a 20px);
+            -webkit-background-clip: text; background-clip: text;
+            text-shadow: 0 0 50px rgba(229, 9, 20, 0.2);
+        }
+        .hero-overlay p { color: #444; letter-spacing: 4px; font-size: 13px; margin-top: 8px; }
+        .hero-overlay .disclaimer { color: #222; font-size: 10px; margin-top: 15px; letter-spacing: 1px; max-width: 700px; margin-left: auto; margin-right: auto; }
+
+        .hidden-input { display: none; }
+
+        @media (max-width: 768px) {
+            .vault-container { padding: 15px; }
+            .paywall-banner { flex-direction: column; align-items: stretch; }
+            .pay-btn { justify-content: center; }
+            .member-grid { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 15px; }
+            .eye-black-bar { height: 14%; top: 38%; }
+            .eye-black-bar::after { font-size: 5px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="vault-container">
+
+    <!-- HEADER -->
+    <div class="header">
+        <div class="logo-area">
+            <div class="lock-icon"><i class="fas fa-skull"></i></div>
+            <div class="logo-text">
+                <h1>DOSSIER // 001</h1>
+                <span><i class="fas fa-circle" style="color:#e50914; font-size: 8px;"></i> ENCRYPTED • CLASSIFIED</span>
+            </div>
+        </div>
+        <div class="status-badge"><i class="fas fa-circle" style="color:#e50914;"></i> PAYWALL ACTIVE</div>
+    </div>
+
+    <!-- PAYWALL BANNER - ₹1199 with LIVE UPI LINK -->
+    <div class="paywall-banner">
+        <div class="paywall-text">
+            <i class="fas fa-file-invoice-dollar"></i>
+            <div>
+                <h2>🔒 FULL DOSSIER LOCKED • PREMIUM ACCESS</h2>
+                <p>Complete photographic profiles locked. Pay ₹1199 to unlock all high-res files.</p>
+            </div>
+        </div>
+        <!-- UPI BUTTON - UPDATED WITH YOUR ID -->
+        <button class="pay-btn" onclick="initiateUPIPayment()">
+            <i class="fas fa-unlock-alt"></i> Pay ₹1199 via UPI
+        </button>
+    </div>
+
+    <!-- GRID INFO -->
+    <div class="grid-intro">
+        <span><i class="fas fa-id-card"></i> SUBJECT GALLERY (AS PER YOUR LIST)</span>
+        <span><i class="fas fa-upload"></i> Click any card → Upload Photo</span>
+    </div>
+
+    <!-- MEMBER GRID -->
+    <div class="member-grid" id="memberGrid">
+        <!-- Cards will be injected by JavaScript -->
+    </div>
+
+    <!-- CENTRAL OVERLAY -->
+    <div class="hero-overlay">
+        <h1>GO TO CRIME MARKET</h1>
+        <p><i class="fas fa-triangle-exclamation"></i> SHOWCASE MODE • UPLOAD YOUR OWN IMAGES <i class="fas fa-triangle-exclamation"></i></p>
+        <p class="disclaimer">
+            ⚠️ DISCLAIMER: This is a visual template. The user is fully responsible for uploading any political images. 
+            Using real individuals' likenesses with derogatory labels may constitute defamation.
+        </p>
+    </div>
+
+</div>
+
+<script>
+    // ---------- NAMES EXACTLY FROM YOUR SCREENSHOT ----------
+    const memberData = [
+        { name: "Narendra Modi", badge: "PM-IND" },
+        { name: "Dr K. LAXMAN", badge: "RS-MP" },
+        { name: "Lok Sabha MPs (BJP)", badge: "LS-2024" },
+        { name: "Rajya Sabha MPs (BJP)", badge: "RS-2024" },
+        { name: "State Presidents (BJP)", badge: "ST-PRES" },
+        { name: "BJP National Team", badge: "HQ-DEL" },
+        { name: "BJP Spokesperson", badge: "MEDIA" },
+        { name: "BJP Leader (Gen.)", badge: "KARYAKARTA" }
+    ];
+
+    const grid = document.getElementById('memberGrid');
+
+    memberData.forEach((item, index) => {
+        const card = document.createElement('div');
+        card.className = 'member-card';
+        card.setAttribute('data-index', index);
+        
+        card.innerHTML = `
+            <div class="img-wrapper">
+                <div class="bg-blur" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiMxYTFhMWEiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE0IiBmaWxsPSIjNTU1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+Q0xpY2sgdG8gQWRkPC90ZXh0Pjwvc3ZnPg==');"></div>
+                <div class="user-image" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiMxYTFhMWEiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE0IiBmaWxsPSIjNTU1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+Q0xpY2sgdG8gQWRkPC90ZXh0Pjwvc3ZnPg==');"></div>
+                <div class="eye-black-bar"></div>
+                <div class="watermark-lock"><i class="fas fa-lock"></i> LOCKED</div>
+            </div>
+            <div class="member-footer">
+                <span class="name">${item.name}</span>
+                <span class="badge">${item.badge}</span>
+            </div>
+        `;
+
+        // --- CLICK TO UPLOAD IMAGE ---
+        card.addEventListener('click', function(e) {
+            const fileInput = document.createElement('input');
+            fileInput.type = 'file';
+            fileInput.accept = 'image/*';
+            fileInput.className = 'hidden-input';
+            document.body.appendChild(fileInput);
+
+            fileInput.onchange = function(event) {
+                const file = event.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(ev) {
+                        const dataUrl = ev.target.result;
+                        const wrapper = card.querySelector('.img-wrapper');
+                        const userImg = wrapper.querySelector('.user-image');
+                        const blurBg = wrapper.querySelector('.bg-blur');
+                        
+                        userImg.style.backgroundImage = `url('${dataUrl}')`;
+                        blurBg.style.backgroundImage = `url('${dataUrl}')`;
+                        fileInput.remove();
+                    };
+                    reader.readAsDataURL(file);
+                } else {
+                    fileInput.remove();
+                }
+            };
+            fileInput.click();
+        });
+
+        grid.appendChild(card);
+    });
+
+    // ---------- NEW: LIVE UPI PAYMENT FUNCTION ----------
+    function initiateUPIPayment() {
+        // Your exact UPI ID
+        const upiId = 'Deewuuu01@ptyes';
+        const amount = '1199.00';
+        const currency = 'INR';
+        const payeeName = 'Dossier Vault';
+        const transactionNote = 'Unlock Classified Dossier';
+        
+        // Construct the UPI Deep Link
+        const upiUrl = `upi://pay?pa=${upiId}&pn=${encodeURIComponent(payeeName)}&am=${amount}&cu=${currency}&tn=${encodeURIComponent(transactionNote)}`;
+        
+        // Try to open the UPI app immediately
+        window.location.href = upiUrl;
+        
+        // Fallback: If the user is on desktop or UPI doesn't open, show manual details after 3 seconds.
+        setTimeout(() => {
+            alert('📱 If the UPI app does not open automatically:\n\nPlease open your UPI app (GPay/PhonePe/Paytm) and send ₹' + amount + ' to:\n\nUPI ID: ' + upiId + '\n\n(After payment, refresh this page to access the files.)');
+        }, 3000);
+    }
+
+    console.log('✅ Template ready. UPI ID set to Deewuuu01@ptyes for ₹1199.');
+</script>
+
+</body>
+</html>
