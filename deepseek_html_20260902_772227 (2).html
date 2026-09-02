@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔒 CLASSIFIED DOSSIER • ₹1199</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, sans-serif; }
+        body { background: #050505; min-height: 100vh; display: flex; justify-content: center; align-items: center; padding: 20px; }
+
+        .vault-container {
+            max-width: 1300px; width: 100%; background: #111; border: 1px solid #2a2a2a;
+            border-radius: 32px; padding: 35px; box-shadow: 0 30px 60px rgba(0,0,0,0.9);
+            position: relative; overflow: hidden;
+        }
+        .vault-container::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            background: repeating-linear-gradient(0deg, rgba(0,0,0,0.05) 0px, rgba(0,0,0,0.05) 2px, transparent 2px, transparent 6px);
+            pointer-events: none; z-index: 5;
+        }
+
+        .header {
+            display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;
+            flex-wrap: wrap; gap: 15px; border-bottom: 1px solid #222; padding-bottom: 20px;
+        }
+        .logo-area { display: flex; align-items: center; gap: 14px; }
+        .lock-icon { background: #e50914; color: #fff; width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px; }
+        .logo-text h1 { color: #f5f5f5; font-size: 22px; font-weight: 700; }
+        .logo-text span { color: #777; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; }
+        .status-badge { background: #1a1a1a; padding: 8px 20px; border-radius: 100px; border: 1px solid #333; color: #aaa; font-size: 13px; }
+
+        .paywall-banner {
+            background: linear-gradient(135deg, #1a1a1a, #0a0a0a); border: 1px solid #2c2c2c;
+            border-radius: 20px; padding: 20px 30px; margin-bottom: 35px;
+            display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;
+        }
+        .paywall-text { display: flex; align-items: center; gap: 15px; }
+        .paywall-text i { font-size: 28px; color: #f5c518; }
+        .paywall-text h2 { color: #eee; font-size: 18px; }
+        .paywall-text p { color: #888; font-size: 14px; }
+        .pay-btn {
+            background: #f5c518; color: #0a0a0a; border: none; padding: 14px 40px;
+            border-radius: 60px; font-weight: 800; font-size: 18px; cursor: pointer;
+            display: flex; align-items: center; gap: 12px; box-shadow: 0 4px 20px rgba(245, 197, 24, 0.3);
+            transition: 0.2s;
+        }
+        .pay-btn:hover { transform: scale(1.03); background: #ffe066; }
+
+        .member-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 25px; margin-bottom: 30px; }
+
+        .member-card {
+            background: #0d0d0d; border-radius: 18px; overflow: hidden; border: 1px solid #222;
+            transition: 0.3s; position: relative; cursor: pointer;
+        }
+        .member-card:hover { transform: translateY(-6px); border-color: #444; box-shadow: 0 12px 30px rgba(0,0,0,0.8); }
+
+        .img-wrapper {
+            position: relative; width: 100%; padding-top: 115%; background: #080808; overflow: hidden;
+        }
+        .img-wrapper .user-image {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background-size: cover; background-position: center;
+            filter: grayscale(100%) contrast(1.1);
+            z-index: 2; transition: 0.3s;
+        }
+        .img-wrapper .bg-blur {
+            position: absolute; top: -10%; left: -10%; width: 120%; height: 120%;
+            background-size: cover; background-position: center;
+            filter: grayscale(100%) blur(8px) brightness(0.3);
+            opacity: 0.7; z-index: 1;
+        }
+        .eye-black-bar {
+            position: absolute; top: 36%; left: 5%; width: 90%; height: 18%;
+            background: #000000; z-index: 10; border-radius: 4px;
+            border: 1px solid #2a2a2a; display: flex; align-items: center; justify-content: center;
+            opacity: 0.9;
+        }
+        .eye-black-bar::after {
+            content: '▇▇ REDACTED ▇▇'; font-size: 8px; letter-spacing: 2px; font-weight: 800;
+            color: #444; background: #111; padding: 2px 10px; border-radius: 20px;
+        }
+        .watermark-lock {
+            position: absolute; top: 12px; right: 12px; background: rgba(0,0,0,0.8); backdrop-filter: blur(4px);
+            padding: 4px 12px; border-radius: 40px; color: #f5c518; font-size: 10px; font-weight: 600;
+            border: 1px solid #f5c51830; z-index: 20;
+        }
+        .member-footer {
+            padding: 12px 16px; background: #0a0a0a; border-top: 1px solid #181818;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .member-footer .name { color: #bbb; font-weight: 600; font-size: 13px; }
+        .member-footer .badge { color: #444; font-size: 10px; background: #151515; padding: 2px 10px; border-radius: 40px; border: 1px solid #222; }
+
+        .hero-overlay { margin-top: 20px; padding: 30px 0 10px; text-align: center; border-top: 1px solid #1a1a1a; }
+        .hero-overlay h1 {
+            font-size: clamp(2.5rem, 9vw, 6rem); font-weight: 900; text-transform: uppercase; letter-spacing: 10px;
+            color: transparent; -webkit-text-stroke: 2px #e50914;
+            background: repeating-linear-gradient(45deg, #111, #111 10px, #1a1a1a 10px, #1a1a1a 20px);
+            -webkit-background-clip: text; background-clip: text;
+            text-shadow: 0 0 50px rgba(229, 9, 20, 0.2);
+        }
+        .hero-overlay p { color: #444; letter-spacing: 4px; font-size: 13px; margin-top: 8px; }
+        .hero-overlay .disclaimer { color: #222; font-size: 10px; margin-top: 15px; letter-spacing: 1px; max-width: 700px; margin-left: auto; margin-right: auto; }
+
+        .reset-btn {
+            background: #2a2a2a; color: #aaa; border: 1px solid #444; padding: 8px 22px;
+            border-radius: 40px; margin-top: 15px; font-size: 12px; cursor: pointer;
+            transition: 0.2s;
+        }
+        .reset-btn:hover { background: #3a3a3a; color: #fff; border-color: #666; }
+
+        .hidden-input { display: none; }
+
+        @media (max-width: 768px) {
+            .vault-container { padding: 15px; }
+            .paywall-banner { flex-direction: column; align-items: stretch; }
+            .pay-btn { justify-content: center; }
+            .member-grid { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 15px; }
+            .eye-black-bar { height: 14%; top: 38%; }
+            .eye-black-bar::after { font-size: 5px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="vault-container">
+
+    <!-- HEADER -->
+    <div class="header">
+        <div class="logo-area">
+            <div class="lock-icon"><i class="fas fa-skull"></i></div>
+            <div class="logo-text">
+                <h1>DOSSIER // 001</h1>
+                <span><i class="fas fa-circle" style="color:#e50914; font-size: 8px;"></i> ENCRYPTED • CLASSIFIED</span>
+            </div>
+        </div>
+        <div class="status-badge"><i class="fas fa-circle" style="color:#e50914;"></i> PAYWALL ACTIVE</div>
+    </div>
+
+    <!-- PAYWALL BANNER - ₹1199 -->
+    <div class="paywall-banner" id="paywallBanner">
+        <div class="paywall-text">
+            <i class="fas fa-file-invoice-dollar"></i>
+            <div>
+                <h2>🔒 FULL DOSSIER LOCKED • PREMIUM ACCESS</h2>
+                <p>Complete photographic profiles locked. Pay ₹1199 to unlock and add/edit photos.</p>
+            </div>
+        </div>
+        <button class="pay-btn" onclick="initiateUPIPayment()">
+            <i class="fas fa-unlock-alt"></i> Pay ₹1199 via UPI
+        </button>
+    </div>
+
+    <!-- MEMBER GRID - बिना किसी टेक्स्ट के (पूरी तरह साफ) -->
+    <div class="member-grid" id="memberGrid"></div>
+
+    <!-- CENTRAL OVERLAY -->
+    <div class="hero-overlay">
+        <h1>GO TO CRIME MARKET</h1>
+        <p><i class="fas fa-triangle-exclamation"></i> FOR PERSONAL USE ONLY • NOT FOR SHARING <i class="fas fa-triangle-exclamation"></i></p>
+        <p class="disclaimer">
+            ⚠️ पेमेंट के बाद ही फोटो अपलोड करने की Permission मिलेगी। <br>
+            (सिमुलेशन: ₹1199 बटन दबाते ही अनलॉक हो जाएगा)
+        </p>
+        <button class="reset-btn" onclick="resetPhotos()">🔄 Reset Photos to Default</button>
+    </div>
+
+</div>
+
+<script>
+    const memberData = [
+        { name: "Narendra Modi", badge: "PM-IND", defaultPhoto: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Narendra_Modi_2023_%28cropped%29.jpg/400px-Narendra_Modi_2023_%28cropped%29.jpg" },
+        { name: "Dr K. LAXMAN", badge: "RS-MP", defaultPhoto: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/K._Laxman.jpg/400px-K._Laxman.jpg" },
+        { name: "Lok Sabha MPs (BJP)", badge: "LS-2024", defaultPhoto: "https://i.pravatar.cc/300?img=31" },
+        { name: "Rajya Sabha MPs (BJP)", badge: "RS-2024", defaultPhoto: "https://i.pravatar.cc/300?img=32" },
+        { name: "State Presidents (BJP)", badge: "ST-PRES", defaultPhoto: "https://i.pravatar.cc/300?img=33" },
+        { name: "BJP National Team", badge: "HQ-DEL", defaultPhoto: "https://i.pravatar.cc/300?img=34" },
+        { name: "BJP Spokesperson", badge: "MEDIA", defaultPhoto: "https://i.pravatar.cc/300?img=35" },
+        { name: "BJP Leader (Gen.)", badge: "KARYAKARTA", defaultPhoto: "https://i.pravatar.cc/300?img=36" }
+    ];
+
+    const grid = document.getElementById('memberGrid');
+
+    function isUnlocked() {
+        return localStorage.getItem('dossier_unlocked') === 'true';
+    }
+
+    function getPhotoForIndex(index) {
+        const saved = localStorage.getItem('photo_' + index);
+        if (saved && saved !== 'undefined' && saved !== 'null') {
+            return saved;
+        }
+        return memberData[index].defaultPhoto;
+    }
+
+    memberData.forEach((item, index) => {
+        const card = document.createElement('div');
+        card.className = 'member-card';
+        card.setAttribute('data-index', index);
+        
+        const currentPhoto = getPhotoForIndex(index);
+        
+        card.innerHTML = `
+            <div class="img-wrapper">
+                <div class="bg-blur" style="background-image: url('${currentPhoto}');"></div>
+                <div class="user-image" style="background-image: url('${currentPhoto}');"></div>
+                <div class="eye-black-bar"></div>
+                <div class="watermark-lock"><i class="fas fa-lock"></i> LOCKED</div>
+            </div>
+            <div class="member-footer">
+                <span class="name">${item.name}</span>
+                <span class="badge">${item.badge}</span>
+            </div>
+        `;
+
+        card.addEventListener('click', function(e) {
+            if (!isUnlocked()) {
+                document.getElementById('paywallBanner').scrollIntoView({ behavior: 'smooth' });
+                alert('🔒 यह कंटेंट लॉक है। कृपया पहले ₹1199 का भुगतान करें (UPI बटन दबाएँ) और फिर फोटो अपलोड करें।');
+                return;
+            }
+
+            const fileInput = document.createElement('input');
+            fileInput.type = 'file';
+            fileInput.accept = 'image/*';
+            fileInput.className = 'hidden-input';
+            document.body.appendChild(fileInput);
+
+            fileInput.onchange = function(event) {
+                const file = event.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(ev) {
+                        const dataUrl = ev.target.result;
+                        const wrapper = card.querySelector('.img-wrapper');
+                        const userImg = wrapper.querySelector('.user-image');
+                        const blurBg = wrapper.querySelector('.bg-blur');
+                        
+                        userImg.style.backgroundImage = `url('${dataUrl}')`;
+                        blurBg.style.backgroundImage = `url('${dataUrl}')`;
+                        
+                        localStorage.setItem('photo_' + index, dataUrl);
+                        
+                        fileInput.remove();
+                        alert('✅ फोटो सेट हो गई! अब यह हमेशा के लिए सेव रहेगी।');
+                    };
+                    reader.readAsDataURL(file);
+                } else {
+                    fileInput.remove();
+                }
+            };
+            fileInput.click();
+        });
+
+        grid.appendChild(card);
+    });
+
+    function resetPhotos() {
+        if (confirm('क्या आप वाकई सभी कस्टम फोटो हटाकर डिफॉल्ट फोटो (Modi, Laxman, और डमी) करना चाहते हैं?')) {
+            for (let i = 0; i < memberData.length; i++) {
+                localStorage.removeItem('photo_' + i);
+            }
+            alert('✅ सभी फोटो रीसेट हो गईं! पेज रिफ्रेश हो रहा है...');
+            location.reload();
+        }
+    }
+
+    function initiateUPIPayment() {
+        localStorage.setItem('dossier_unlocked', 'true');
+        alert('✅ डोजियर अनलॉक हो गया! अब आप किसी भी कार्ड पर क्लिक करके फोटो अपलोड कर सकते हैं।');
+
+        const upiId = 'Deewuuu01@ptyes';
+        const amount = '1199.00';
+        const currency = 'INR';
+        const payeeName = 'Dossier Vault';
+        const transactionNote = 'Unlock Classified Dossier';
+        
+        const upiUrl = `upi://pay?pa=${upiId}&pn=${encodeURIComponent(payeeName)}&am=${amount}&cu=${currency}&tn=${encodeURIComponent(transactionNote)}`;
+        
+        window.location.href = upiUrl;
+        
+        setTimeout(() => {
+            alert('📱 अगर UPI ऐप नहीं खुलता, तो मैन्युअल भेजें:\n\nUPI ID: ' + upiId + '\nराशि: ₹' + amount + '\n\n(भुगतान के बाद पेज रिफ्रेश करें, अनलॉक हो चुका है)');
+        }, 3000);
+    }
+
+    console.log('✅ बिल्कुल फाइनल कोड! ऊपर का "SUBJECT GALLERY..." वाला टेक्स्ट पूरी तरह हटा दिया गया है।');
+</script>
+
+</body>
+</html>
